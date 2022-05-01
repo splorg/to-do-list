@@ -15,6 +15,19 @@
     margin:  1em 1em 1.5em 1em;
 }
 
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    margin: auto auto 2em auto;
+}
+
+.intro .button {
+    width: fit-content;
+    align-self: center;
+}
+
 .text {
     /* background-color: blue; */
     width: 100%;
@@ -23,10 +36,11 @@
 
 .list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 600px));
     justify-content: center;
     gap: 1.5em;
     margin: 1em 1em 3em 1em;
+    margin-bottom: 6em;
 }
 
 .list__message {
@@ -44,8 +58,10 @@
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     padding: 1.8em;
     text-align: center;
+    align-items: center;
     gap: 1em;
     min-height: 20vh;
+    word-break: break-all;
 }
 
 .list__item__text {
@@ -75,4 +91,56 @@
     cursor: pointer;
     background-color: #234d8d;
     transition: background-color 350ms;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    padding: 2em;
+    text-align: center;
+    gap: 1em;
+    min-width: 40vw;
+    max-width: 80vw;
+    min-height: 20vh;
+    align-self: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.form > label {
+    font-size: 1.5rem
+}
+
+.form > input {
+    padding: 1em 2em;
+    border: none;
+    border-bottom: 3px solid #555;
+    width: 75%;
+    align-self: center;
+    font-family: verdana;
+}
+
+.form > input:focus {
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.form__danger {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: red;
+    color: white;
+    width: fit-content;
+    padding: .5em;
+    border-radius: 5px;
+    align-self: center;
+    opacity: 60%;
+}
+
+.form__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
 }

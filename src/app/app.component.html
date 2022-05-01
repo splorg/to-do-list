@@ -2,14 +2,38 @@
 
   <h1 class="title">{{ title }}</h1>
   
-  
-  <div class="text">
+  <div class="intro" *ngIf="mode=='list'">
 
     <p class="list__message" *ngIf="todos.length==0">Você não tem nenhuma tarefa hoje.</p>
 
+    <button class="button" (click)="changeMode('add')">Adicionar tarefa</button>
+
+  </div>
+
+  <div id="modal" *ngIf="mode=='add'">
+
+    <form class="form" [formGroup]="form">
+      <label>Nova tarefa</label>
+        <input type="text"
+          placeholder="Título da tarefa" maxlength="60"
+          formControlName="title">
+
+          <small class="form__danger" *ngIf="form.controls['title'].invalid && !form.controls['title'].pristine">Este campo deve conter entre 6 e 60 caracteres.</small>
+
+        <div class="form__buttons">
+          <button class="button" [disabled]="form.invalid" (click)="add()">Salvar</button>
+          <button class="button" (click)="changeMode('list')">Voltar</button>
+        </div>
+    
+     </form>
+
+  </div>
+
+</div>
+
+  <div *ngIf="mode=='list'" class="text">
+
     <ul class="list">
-  
-      <!-- <p class="list__message" *ngIf="todos.length==0">Você não tem nenhuma tarefa hoje.</p> -->
   
       <li class="list__item" *ngFor="let todo of todos">
 
@@ -26,23 +50,6 @@
     </ul>
   
   </div>
-  
-  <form class="form" [formGroup]="form">
-
-    <fieldset>
-
-      <label>Tarefa</label>
-        <input type="text"
-          placeholder="Título da tarefa" maxlength="60"
-          formControlName="title">
-          <small *ngIf="form.controls['title'].invalid && !form.controls['title'].pristine">Este campo deve conter entre 3 e 60 caracteres.</small>
-        <button [disabled]="form.invalid" (click)="add()">Salvar</button>
-
-    </fieldset>
-
-  </form>
-
-</div>
 
 <!--
 
