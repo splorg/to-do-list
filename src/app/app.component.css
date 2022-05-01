@@ -1,0 +1,78 @@
+.container {
+    margin: 0;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    word-break: break-all;
+}
+
+.title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
+    margin:  1em 1em 1.5em 1em;
+}
+
+.text {
+    /* background-color: blue; */
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    gap: 1.5em;
+    margin: 1em 1em 3em 1em;
+}
+
+.list__message {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: bold;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.list__item {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    padding: 1.8em;
+    text-align: center;
+    gap: 1em;
+    min-height: 20vh;
+}
+
+.list__item__text {
+    height: 80%;
+}
+
+.list__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: #3c86f5;
+    border-radius: 4px;
+    border: none;
+    text-align: center;
+    padding: 1.2em;
+}
+
+.button:hover, button:focus {
+    cursor: pointer;
+    background-color: #234d8d;
+    transition: background-color 350ms;
+}
