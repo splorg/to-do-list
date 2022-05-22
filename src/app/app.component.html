@@ -35,9 +35,9 @@
 
     <ul class="list">
   
-      <li class="list__item" *ngFor="let todo of todos">
+      <li class="list__item" *ngFor="let todo of todos; index as i">
 
-        <p class="list__item__text"><strong>{{todo.id}}.</strong> {{ todo.title }}</p>
+        <p class="list__item__text"><strong>{{i + 1}}.</strong> {{ todo.title }}</p>
 
         <div class="list__buttons">
           <button class="button" *ngIf="!todo.done" (click)="markAsDone(todo)">CONCLUIR</button>
