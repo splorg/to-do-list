@@ -27,8 +27,7 @@ export class AppComponent {
 
   add() {
     const title = this.form.controls['title'].value
-    const id = this.todos.length + 1
-    this.todos.push(new Todo(id, title, false))
+    this.todos.push(new Todo(title, false))
     this.save()
     this.clear()
     this.changeMode('list')
@@ -62,8 +61,8 @@ export class AppComponent {
   }
 
   load() {
-    const data = localStorage.getItem('todos')
-    this.todos = JSON.parse(data || '{}')
+    const data = localStorage.getItem("todos")
+    this.todos = Array.from(JSON.parse(data || '[]'))
   }
 
   changeMode(mode: string) {
